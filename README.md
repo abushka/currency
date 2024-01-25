@@ -2,6 +2,8 @@
 
 `pip install -r requirements.txt`
 
+Скопируйте и переименуйте файл .env_example в .env
+
 Проведите миграции
 
 `python manage.py migrate`
