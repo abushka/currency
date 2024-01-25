@@ -1,4 +1,5 @@
 import json
+from currency.settings import API_URL
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -11,7 +12,7 @@ last_10_requests = deque(maxlen=10)
 
 # Функция для получения актуального курса доллара к рублю
 def get_current_usd_rate():
-    url = "https://www.cbr-xml-daily.ru/latest.js"
+    url = API_URL
     response = requests.get(url)
     data = response.json()
     return data["rates"]["USD"]
